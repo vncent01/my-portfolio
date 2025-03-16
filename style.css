@@ -465,6 +465,7 @@ body {
         align-items: start; /* Align items to the top */
         text-align: left; /* Align text to the left */
         gap: 10px; /* Adjust space between image and content */
+        margin-bottom: 20px;
     }
 
     .header-content h2 {
@@ -492,7 +493,8 @@ body {
     }
 
     .btn {
-        padding: 4px 9px; /* Adjust padding inside the button */
+        padding: 4px 10px; /* Adjust padding inside the button */
+        border-radius: 5px;
         margin-top: 10px; /* Adjust margin above */
         display: inline-block; /* Ensure buttons stay inline */
         cursor: pointer; /* Show pointer on hover */
