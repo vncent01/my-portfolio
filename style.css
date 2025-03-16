@@ -492,13 +492,13 @@ body {
     }
 
     .btn {
-        padding: 5px 10px; /* Adjust padding inside the button */
+        padding: 4px 9px; /* Adjust padding inside the button */
         margin-top: 10px; /* Adjust margin above */
         display: inline-block; /* Ensure buttons stay inline */
         cursor: pointer; /* Show pointer on hover */
         transition: 0.2s; /* Smooth hover effect */
         margin-right: 0; /* Remove right margin */
-        font-size: 10px; /* Reduce font size */
+        font-size: 9px; /* Reduce font size */
     }
 
     /* Content Section adjustments */
@@ -509,6 +509,10 @@ body {
 
     .item {
         flex: 1 1 100%; /* Each item takes up full width on smaller screens */
+    }
+
+    .item:first-child p {
+        font-size: 12px;
     }
     
     .item:nth-child(2) {
