@@ -468,19 +468,19 @@ body {
     }
 
     .header-content h2 {
-        font-size: 18px; /* Reduce font size for smaller screens */
+        font-size: 16px; /* Reduce font size for smaller screens */
         margin-top: 10px; /* Adjust margin above */
         margin-bottom: 0; /* Remove margin below */
     }
 
     .header-content p {
-        font-size: 14px; /* Reduce font size for paragraphs */
+        font-size: 12px; /* Reduce font size for paragraphs */
         margin-bottom: 0; /* Remove margin below */
     }
 
     .header #icon {
         position: absolute;
-        height: 22px; /* Reduce icon size */
+        height: 20px; /* Reduce icon size */
         margin-left: 0; /* Remove left margin */
         margin-bottom: 0; /* Reset bottom margin */
         transform: translateY(0); /* Reset position */
@@ -492,12 +492,13 @@ body {
     }
 
     .btn {
+        padding: 5px 10px; /* Adjust padding inside the button */
         margin-top: 10px; /* Adjust margin above */
         display: inline-block; /* Ensure buttons stay inline */
         cursor: pointer; /* Show pointer on hover */
         transition: 0.2s; /* Smooth hover effect */
         margin-right: 0; /* Remove right margin */
-        font-size: 12px; /* Reduce font size */
+        font-size: 10px; /* Reduce font size */
     }
 
     /* Content Section adjustments */

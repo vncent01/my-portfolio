@@ -411,4 +411,8 @@ body {
     .modal-content {
         width: 85%;
     }
+
+    .project-container button {
+        width: 50%; /* Full width button */
+    }
 }
