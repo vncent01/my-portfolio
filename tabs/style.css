@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0; /* Reset all padding to zero */
+    margin: 0; /* Reset all margins to zero */
+    font-family: 'Poppins', sans-serif; /* Set default font family */
+    box-sizing: border-box; /* Include padding and border in element's dimensions */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    transition: all 0.1s ease; /* Apply smooth transition to all properties */
+}
+
+/* Define CSS variables for light mode */
+:root {
+    --primary-color: white; /* Light mode background color */
+    --secondary-color: rgb(0, 0, 0); /* Light mode text color */
+    --item-bg: white; /* Container background color for light mode */
+    --box-bg: #e7e5e5; /* Background for boxes */
+    --btn: #c9c8c8; /* Button hover background color */
+}
+
+/* Define CSS variables for dark mode */
+.dark-theme {
+    --primary-color: rgb(0, 0, 0); /* Dark mode body background color */
+    --secondary-color: white; /* Dark mode text color */
+    --item-bg: rgb(22, 22, 22); /* Slightly black container background */
+    --box-bg: rgb(0, 0, 0); /* Box background in dark mode */
+    --btn: #333333; /* Button hover background in dark mode */
+}
+
+body {
+    margin: 0; /* Remove default margin */
+    padding: 25px 15%; /* Add padding around the body for spacing */
+    width: 100%; /* Set body width to 100% */
+    background-color: var(--primary-color); /* Background color from root variable */
+    color: var(--secondary-color); /* Text color from root variable */
+}
+
+/* Container for the full layout */
+.container {
+    width: 100%; /* Full width for the container */
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 5%; /* Add horizontal padding */
+    transform: translateY(15px);
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between; /* Aligns h1 on the left and "View More" on the right */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.title-container .back {
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 3px;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.title-container .view-more:hover {
+    color: var(--text-color);
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    gap: 10px; /* Space between items */
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.skills-container h3 {
+    flex-basis: 100%; /* Ensures the heading takes the full row */
+}
+
+.skills-container p {
+    font-size: 14px;
+}
+
+.skills {
+    display: flex;
+    align-items: center; /* Aligns content vertically */
+    background: var(--item-bg);
+    border: 1px solid var(--btn);
+    border-radius: 5px;
+    padding: 7px 12px; /* Adds inner spacing */
+    width: max-content; /* Adjusts width based on content */
+    max-width: 100%; /* Prevents it from overflowing */
+    min-width: fit-content; /* Ensures it doesn't shrink too much */
+    white-space: nowrap; /* Prevents text from breaking */
+}
+
+.skills img {
+    height: auto;
+    width: 20px; /* Adjusted icon size */
+    margin-right: 5px;
+}
+
+.skills i {
+    margin-right: 5px;
+}
+
+.item {
+    display: flex; /* Create a flex container */
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 10px; /* Add space between items */
+    justify-content: space-between; /* Distribute items evenly with spacing */
+    width: 100%; /* Set full width for the container */
+}
+
+.exp-container {
+    flex: 1 1 calc(50% - 20px); /* Items take 50% width minus gap for two columns */
+    box-sizing: border-box; /* Include padding and border in dimensions */
+    padding: 20px; /* Add padding inside the item */
+    background-color: var(--item-bg); /* Background color from variable */
+    border-radius: 10px; /* Add rounded corners */
+    border: 1px solid var(--btn); /* Border around the search bar */
+    line-height: 23px; /* Add spacing between lines */
+}
+
+.exp-container .job-title {
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+.exp-container .job-title p{
+    font-size: 14px;
+}
+
+.exp-container .job-title .date {
+    background-color: var(--box-bg);
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.exp-container p {
+    font-size: 13px; /* Set font size for paragraphs */
+}
+
+.certificate-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 15px;
+    padding: 20px;
+}
+
+.certificate-box {
+    background-color: var(--item-bg); /* Use your theme */
+    padding: 10px;
+    border: 1px solid var(--btn);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+}
+
+.certificate-box p {
+    font-size: 12px;
+}
+
+.img-container {
+    width: 100%;
+    height: 150px; /* Fixed height */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevent overflow */
+    border-radius: 5px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures all images have the same aspect ratio */
+}
+
+.certificate-box:hover {
+    transform: scale(1.05);
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 15px;
+    padding: 20px;
+}
+
+.project-box {
+    background-color: var(--item-bg); /* Use your theme */
+    padding: 15px;
+    border: 1px solid var(--btn);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push content apart */
+    height: 100%; /* Ensures uniform height */
+}
+
+.proj-img {
+    width: 100%;
+    height: 200px; /* Fixed height */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevent overflow */
+    border-radius: 5px;
+}
+
+.proj-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures uniform aspect ratio */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Zoom effect on hover */
+.proj-img:hover img {
+    transform: scale(1.1); /* Zoom in effect */
+}
+
+.project-box p {
+    font-size: 14px;
+    margin: 15px 0
+}
+
+/* Button styling */
+.project-container button {
+    width: 30%; /* Set width to 50% */
+    align-self: flex-end; /* Align to the bottom-right */
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    margin-top: auto; /* Push it to the bottom */
+}
+
+.project-container button:hover {
+    transform: translateY(-3px);
+}
+
+.footer {
+    font-size: 12px;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-top: 70px;
+    border-top: 1px solid var(--btn);
+    padding: 30px 0 0 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Modal Background (Initially Hidden) */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    opacity: 0;  /* Hidden initially */
+    pointer-events: none; /* Prevent interactions */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Modal Content */
+.modal-content {
+    background: var(--item-bg);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--btn);
+    width: 50%;
+    max-width: 500px;
+    
+    display: flex;
+    flex-direction: column;
+    
+    transform: translateY(-20px); /* Start slightly above */
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-content h3 {
+    border-bottom: 1px solid var(--btn);
+}
+
+/* Scrollable Content */
+.modal-body {
+    max-height: 60vh; /* Adjust based on preference */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding-right: 10px; /* Prevents content from cutting off */
+}
+
+.modal-body ul {
+    font-size: 14px;
+    margin: 10px 0 0 40px;
+}
+
+.modal-body p span {
+    color: rgb(255, 208, 0);
+}
+
+/* Active Modal (Make Visible) */
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.tech-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    gap: 10px; /* Space between items */
+    align-items: center;
+    margin: 20px 0;
+}
+
+.tech-container h4 {
+    flex-basis: 100%; /* Ensures the heading takes the full row */
+}
+
+.tech-container p {
+    font-size: 12px;
+}
+
+.tech img {
+    height: auto;
+    width: 15px; /* Adjusted icon size */
+    margin-right: 5px;
+}
+
+.tech {
+    display: flex;
+    align-items: center; /* Aligns content vertically */
+    background: var(--item-bg);
+    border: 1px solid var(--btn);
+    border-radius: 5px;
+    padding: 7px 12px; /* Adds inner spacing */
+    width: max-content; /* Adjusts width based on content */
+    max-width: 100%; /* Prevents it from overflowing */
+    min-width: fit-content; /* Ensures it doesn't shrink too much */
+    white-space: nowrap; /* Prevents text from breaking */
+}
+
+
+
+@media (max-width: 1150px) {
+
+    /* Remove body padding on smaller screens (tablet and phone sizes) */
+    body {
+        padding: 20px 8%; /* Remove padding for smaller screens */
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* Remove body padding on smaller screens (tablet and phone sizes) */
+    body {
+        padding: 20px 0; /* Remove padding for smaller screens */
+    }
+}
+
+@media (max-width: 800px) {
+
+    /* Remove body padding on smaller screens (tablet and phone sizes) */
+    body {
+        padding: 20px 0; /* Remove padding for smaller screens */
+    }
+
+    .exp-container {
+        flex: 1 1 100%; /* Full width (one column) */
+    }
+
+    .modal-content {
+        width: 85%;
+    }
+}

@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Import fonts from Google Fonts */
+
+/* Reset and global styles */
+* {
+    padding: 0; /* Reset all padding to zero */
+    margin: 0; /* Reset all margins to zero */
+    font-family: 'Poppins', sans-serif; /* Set default font family */
+    box-sizing: border-box; /* Include padding and border in element's dimensions */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    transition: all 0.1s ease; /* Apply smooth transition to all properties */
+}
+
+/* Define CSS variables for light mode */
+:root {
+    --primary-color: white; /* Light mode background color */
+    --secondary-color: rgb(0, 0, 0); /* Light mode text color */
+    --item-bg: white; /* Container background color for light mode */
+    --box-bg: #e7e5e5; /* Background for boxes */
+    --btn: #c9c8c8; /* Button hover background color */
+}
+
+/* Define CSS variables for dark mode */
+.dark-theme {
+    --primary-color: rgb(0, 0, 0); /* Dark mode body background color */
+    --secondary-color: white; /* Dark mode text color */
+    --item-bg: rgb(22, 22, 22); /* Slightly black container background */
+    --box-bg: rgb(0, 0, 0); /* Box background in dark mode */
+    --btn: #333333; /* Button hover background in dark mode */
+}
+
+body {
+    margin: 0; /* Remove default margin */
+    padding: 25px 15%; /* Add padding around the body for spacing */
+    width: 100%; /* Set body width to 100% */
+    background-color: var(--primary-color); /* Background color from root variable */
+    color: var(--secondary-color); /* Text color from root variable */
+}
+
+/* Container for the full layout */
+.container {
+    width: 100%; /* Full width for the container */
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 5%; /* Add horizontal padding */
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* Animation definition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Section */
+.header {
+    display: flex; /* Align items horizontally in a row */
+    align-items: center; /* Vertically center the header items */
+    gap: 20px; /* Add spacing between items */
+    margin-bottom: 25px; /* Add space below the header */
+    width: 100%; /* Header takes full width */
+    position: relative; /* Positioning for child elements like the icon */
+}
+
+/* Image Styling */
+.header img {
+    height: 150px; /* Set fixed height for the image */
+    width: auto; /* Maintain the image's aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+/* Header Content */
+.header-content {
+    line-height: 20px; /* Add spacing between lines for readability */
+}
+
+.header-content h2 {
+    margin-bottom: 5px; /* Add space below the heading */
+}
+
+.header-content p {
+    font-size: 14px; /* Set text size */
+    margin-bottom: 5px; /* Add space below the paragraph */
+}
+
+/* Dark-mode icon styles within the header */
+.header #icon {
+    height: 25px; /* Set fixed height for the icon */
+    width: auto; /* Maintain the icon's aspect ratio */
+    position: absolute; /* Position icon relative to .header */
+    top: 10px; /* Align to the top of the .header */
+    right: 0; /* Align to the right of the .header */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin: 0; /* No spacing around the icon */
+}
+
+/* Button styles */
+.btn {
+    padding: 7px 12px; /* Add padding inside the button */
+    background-color: var(--secondary-color); /* Button background color */
+    color: var(--primary-color); /* Button text color */
+    font-size: 12px;
+    border: none; /* Remove border */
+    border-radius: 8px; /* Add rounded corners */
+    margin-top: 10px; /* Add space above the button */
+    display: inline-block; /* Inline-block to size the button dynamically */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: 0.2s; /* Smooth transition for hover effects */
+    margin-right: 10px; /* Add space to the right of the button */
+}
+
+.btn a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit the text color from the parent */
+}
+
+.btn:hover {
+    transform: translateY(-3px); /* Move the button upwards slightly on hover */
+}
+
+/* Content Section with Items */
+.content-container {
+    display: flex; /* Create a flex container */
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    gap: 10px; /* Add space between items */
+    justify-content: space-between; /* Distribute items evenly with spacing */
+    width: 100%; /* Set full width for the container */
+}
+
+/* Styling for individual items */
+.item {
+    flex: 1 1 calc(50% - 20px); /* Items take 50% width minus gap for two columns */
+    box-sizing: border-box; /* Include padding and border in dimensions */
+    padding: 20px; /* Add padding inside the item */
+    background-color: var(--item-bg); /* Background color from variable */
+    border-radius: 10px; /* Add rounded corners */
+    border: 1px solid var(--btn); /* Border around the search bar */
+    line-height: 23px; /* Add spacing between lines */
+}
+
+/* Title container to align h1 and View More */
+.item .title-container {
+    display: flex;
+    justify-content: space-between; /* Aligns h1 on the left and "View More" on the right */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.item h1 {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+/* View More text */
+.item .view-more {
+    font-size: 12px;
+    margin-top: 5px;
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.item .view-more:hover {
+    color: var(--text-color);
+}
+
+.item:first-child {
+    flex: 1 1 calc(60% - 20px); /* Make the first item full width */
+    text-align: justify; /* Align text evenly on both sides */
+}
+
+.item:first-child i {
+    font-size: 14px; /* Set icon size */
+    margin-right: 8px; /* Add space to the right of the icon */
+    color: gray; /* Set icon color */
+}
+
+.item:first-child p {
+    font-size: 13px; /* Set text size */
+}
+
+.item:nth-child(2) i {
+    font-size: 14px; /* Set icon size */
+    margin-right: 8px; /* Add space to the right of the icon */
+    color: gray; /* Set icon color *//
+}
+
+.item:nth-child(2) {
+    flex: 1 1 20%; /* Item 2 takes 10% width */
+    box-sizing: border-box; /* Include padding and border in dimensions */
+}
+
+.item:nth-child(2) .tech-stack {
+    display: flex; /* Arrange items horizontally */
+    flex-wrap: wrap; /* Wrap to next row if there's not enough space */
+    gap: 10px; /* Add spacing between each item */
+    justify-content: center; /* Center the items horizontally */
+    text-align: center; /* Center-align text */
+    align-content: center;
+}
+
+.item:nth-child(2) .tech-stack .skills {
+    display: flex;
+    align-items: center; /* Aligns content vertically */
+    border: 1px solid var(--btn);
+    border-radius: 5px;
+    padding: 7px;
+    width: auto; /* Allows each item to shrink or expand based on content */
+    max-width: 100%; /* Ensures up to 3 items per row */
+    min-width: 80px; /* Sets a minimum width to prevent small items */
+    flex: 1 1 auto; /* Makes items responsive */
+    white-space: nowrap; /* Prevents text from breaking */
+}
+
+.item:nth-child(2) .tech-stack p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.item:nth-child(2) img {
+    height: auto;
+    width: 20px; /* Adjusted to fit better */
+    margin-right: 5px;
+}
+
+.item:nth-child(2) #mysql {
+    background: white;
+    margin-top: 3px;
+}
+
+.item:nth-child(3) {
+    line-height: 18px; /* Adjust the line height for better readability */
+}
+
+.item.item:nth-child(3) .date, p {
+    font-size: 12px; /* Set font size for dates and paragraphs */
+}
+
+.item.item:nth-child(3) .p-text {
+    margin-bottom: 8px; /* Add space below the paragraph */
+}
+
+.item.item:nth-child(3) .date {
+    padding: 5px; /* Add inner spacing for the date */
+    background-color: var(--box-bg); /* Apply background color defined by the variable */
+    border-radius: 5px; /* Round the corners of the date container */
+}
+
+.item:nth-child(3) i {
+    font-size: 14px; /* Set icon size */
+    margin-right: 8px; /* Add space to the right of the icon */
+    color: gray; /* Set icon color */
+}
+
+.item:nth-child(3) h4 {
+    font-size: 12px;
+}
+
+.item:nth-child(3) #h4{
+    margin-top: 20px;
+}
+
+.item:nth-child(3) {
+    flex: 1 1 30%; /* Item 3 takes 30% width */
+    box-sizing: border-box; /* Include padding and border in dimensions */
+}
+
+.item:nth-child(4) i {
+    font-size: 14px; /* Set icon size */
+    margin-right: 8px; /* Add space to the right of the icon */
+    color: gray; /* Set icon color */
+}
+
+.item:nth-child(4) p {
+    font-weight: normal;
+}
+
+/* Scrollable Container */
+.item:nth-child(4) .certificate-container {
+    max-height: 200px; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 5px; /* Prevent content from hiding behind scrollbar */
+}
+
+/* Styling for the Scrollbar */
+.item:nth-child(4) .certificate-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.item:nth-child(4) .certificate-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.item:nth-child(4) .certificate-container::-webkit-scrollbar-thumb {
+    background: var(--btn);
+    border-radius: 3px;
+}
+
+/* Certifications Box */
+.item:nth-child(4) .certificate {
+    background-color: var(--box-bg);
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 11px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.item:nth-child(4) .certificate:hover {
+    background-color: var(--btn);
+}
+
+.item:nth-child(4) .certificate:active {
+    transform: translateY(2px);
+}
+
+.item:nth-child(5) i {
+    font-size: 14px; /* Set icon size */
+    margin-right: 8px; /* Add space to the right of the icon */
+    color: gray; /* Set icon color */
+}
+
+.item:nth-child(5) .project {
+    background-color: var(--box-bg); /* Set background color for the project box */
+    width: 100%; /* Make the project box take full width */
+    padding: 15px; /* Add inner spacing */
+    border-radius: 5px; /* Round the corners */
+    text-align: center; /* Center align the text */
+    margin-top: 10px; /* Add space above the project box */
+    font-size: 11px; /* Set font size for text */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    cursor: pointer; /* Show pointer on hover */
+}
+
+.item:nth-child(5) .project a {
+    text-decoration: none; /* Remove underline from links */
+    color: var(--secondary-color); /* Use secondary color for text */
+    font-weight: 600; /* Make text bold */
+}
+
+.item:nth-child(5) .project:hover {
+    background-color: var(--btn); /* Change background color on hover */
+}
+
+.item:nth-child(6) {
+    flex: 1 1 30%; /* Item 6 takes 30% width */
+    box-sizing: border-box; /* Include padding and border in dimensions */
+}
+
+.item:nth-child(6) i {
+    font-size: 14px; /* Set icon size */
+    margin-right: 8px; /* Add space to the right of the icon */
+    color: gray; /* Set icon color */
+}
+
+.item:nth-child(6) .contact-content {
+    padding: 10px; /* Add inner spacing */
+    background-color: var(--box-bg); /* Set background color */
+    border-radius: 5px; /* Round the corners */
+    line-height: 25px; /* Increase line spacing */
+}
+
+.item:nth-child(6) .contact-content h3 {
+    font-size: 15px; /* Set font size for headings */
+}
+
+.item:nth-child(6) .contact-content p {
+    font-size: 13px; /* Set font size for paragraphs */
+}
+
+.item:nth-child(6) .contact-content p a {
+    font-weight: 600; /* Make links bold */
+    color: var(--secondary-color); /* Use secondary color for links */
+}
+
+.item:nth-child(6) .contact-content p a:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.item:nth-child(6) .social {
+    width: 100%; /* Set width for social icons container */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center items horizontally */
+    margin: 20px auto 0; /* Add vertical spacing and center horizontally */
+    display: flex; /* Use flexbox for layout */
+    gap: 10px; /* Add spacing between items */
+}
+
+.item:nth-child(6) .social a {
+    text-decoration: none; /* Remove underline from links */
+    color: var(--secondary-color); /* Use secondary color for text */
+    background-color: var(--box-bg); /* Set background color */
+    padding: 8px; /* Add inner spacing */
+    border-radius: 5px; /* Round the corners */
+    width: 50%; /* Set fixed width for each icon box */
+    text-align: center; /* Center align text inside boxes */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.item:nth-child(6) .social a i {
+    font-size: 23px; /* Set font size for icons */
+    align-items: center;
+    margin-left: 5px;
+    color: var(--secondary-color); /* Use secondary color for icons */
+}
+
+.item:nth-child(6) .social a:hover {
+    transform: translateY(-5px); /* Move upward slightly on hover */
+    background-color: var(--btn); /* Change background color on hover */
+}
+
+.footer {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-top: 70px;
+    border-top: 1px solid var(--btn);
+    padding: 30px 0 0 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive design for smaller screens (phone and tablet) */
+
+@media (max-width: 1150px) {
+
+    /* Remove body padding on smaller screens (tablet and phone sizes) */
+    body {
+        padding: 20px 8%; /* Remove padding for smaller screens */
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* Remove body padding on smaller screens (tablet and phone sizes) */
+    body {
+        padding: 20px 0; /* Remove padding for smaller screens */
+    }
+}
+
+@media (max-width: 800px) {
+
+    /* Remove body padding on smaller screens (tablet and phone sizes) */
+    body {
+        padding: 20px 0; /* Remove padding for smaller screens */
+    }
+
+    /* Header adjustments for smaller screens */
+    .header {
+        flex-direction: row; /* Adjust to horizontal layout */
+        align-items: start; /* Align items to the top */
+        text-align: left; /* Align text to the left */
+        gap: 10px; /* Adjust space between image and content */
+    }
+
+    .header-content h2 {
+        font-size: 18px; /* Reduce font size for smaller screens */
+        margin-top: 10px; /* Adjust margin above */
+        margin-bottom: 0; /* Remove margin below */
+    }
+
+    .header-content p {
+        font-size: 14px; /* Reduce font size for paragraphs */
+        margin-bottom: 0; /* Remove margin below */
+    }
+
+    .header #icon {
+        position: absolute;
+        height: 22px; /* Reduce icon size */
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 0; /* Reset bottom margin */
+        transform: translateY(0); /* Reset position */
+        top: 7px;
+    }
+
+    .header img {
+        height: 120px; /* Reduce image size */
+    }
+
+    .btn {
+        margin-top: 10px; /* Adjust margin above */
+        display: inline-block; /* Ensure buttons stay inline */
+        cursor: pointer; /* Show pointer on hover */
+        transition: 0.2s; /* Smooth hover effect */
+        margin-right: 0; /* Remove right margin */
+        font-size: 12px; /* Reduce font size */
+    }
+
+    /* Content Section adjustments */
+    .content-container {
+        padding: 0; /* Remove padding to take up full width */
+        width: 100%; /* Ensure content takes full width */
+    }
+
+    .item {
+        flex: 1 1 100%; /* Each item takes up full width on smaller screens */
+    }
+    
+    .item:nth-child(2) {
+        flex: 1 1 100%; /* Second item takes full width */
+    }
+
+    .item:nth-child(2) .tech-stack div {
+        width: 15%; /* Set width for each tech stack item */
+    }
+}
+
