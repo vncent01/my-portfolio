@@ -456,6 +456,26 @@ body {
         max-width: 1000px; /* Adjust container width */
         padding: 0 4%; /* Reduce container padding */
     }
+
+    .item:first-child p {
+        font-size: 12px; /* Reduce font size for paragraphs */
+    }
+
+    .item:nth-child(3) .date, p {
+        font-size: 12px; /* Set font size for dates and paragraphs */
+    }
+
+    .item:nth-child(5) .project a {
+        font-size: 12px; /* Set font size for project links */
+    }
+
+    .item:nth-child(6) .contact-content h3 {
+        font-size: 14px; /* Set font size for headings */
+    }
+
+    .item:nth-child(6) .contact-content p {
+        font-size: 12px; /* Set font size for paragraphs */
+    }
 }
 
 @media (max-width: 800px) {
