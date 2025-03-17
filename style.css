@@ -449,7 +449,7 @@ body {
 
     /* Remove body padding on smaller screens (tablet and phone sizes) */
     body {
-        padding: 20px 8%; /* Reduce padding for better fit */
+        padding: 20px 0; /* Reduce padding for better fit */
     }
 
     .container {
