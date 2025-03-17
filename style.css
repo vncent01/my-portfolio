@@ -470,8 +470,7 @@ body {
 
     .header-content h2 {
         font-size: 16px; /* Reduce font size for smaller screens */
-        margin-top: 10px; /* Adjust margin above */
-        margin-bottom: 0; /* Remove margin below */
+        margin: 0; /* Adjust margin above */
     }
 
     .header-content p {
@@ -485,7 +484,7 @@ body {
         margin-left: 0; /* Remove left margin */
         margin-bottom: 0; /* Reset bottom margin */
         transform: translateY(0); /* Reset position */
-        top: 7px;
+        top: 5px;
     }
 
     .header img {
@@ -495,12 +494,11 @@ body {
     .btn {
         padding: 4px 10px; /* Adjust padding inside the button */
         border-radius: 5px;
-        margin-top: 10px; /* Adjust margin above */
-        display: inline-block; /* Ensure buttons stay inline */
+        margin: 5px 0 0 0; /* Adjust margin above */
+        display: block; /* Ensure buttons stay inline */
         cursor: pointer; /* Show pointer on hover */
         transition: 0.2s; /* Smooth hover effect */
-        margin-right: 0; /* Remove right margin */
-        font-size: 9px; /* Reduce font size */
+        font-size: 11px; /* Reduce font size */
     }
 
     /* Content Section adjustments */
