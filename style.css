@@ -3,46 +3,47 @@
 
 /* Reset and global styles */
 * {
-    padding: 0; /* Reset all padding to zero */
-    margin: 0; /* Reset all margins to zero */
-    font-family: 'Poppins', sans-serif; /* Set default font family */
-    box-sizing: border-box; /* Include padding and border in element's dimensions */
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-    transition: all 0.1s ease; /* Apply smooth transition to all properties */
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: all 0.1s ease;
 }
 
-/* Define CSS variables for light mode */
+/* Light Mode Variables */
 :root {
-    --primary-color: white; /* Light mode background color */
-    --secondary-color: rgb(0, 0, 0); /* Light mode text color */
-    --item-bg: white; /* Container background color for light mode */
-    --box-bg: #e7e5e5; /* Background for boxes */
-    --btn: #c9c8c8; /* Button hover background color */
+    --primary-color: white;
+    --secondary-color: black;
+    --item-bg: white;
+    --box-bg: #e7e5e5;
+    --btn: #c9c8c8;
 }
 
-/* Define CSS variables for dark mode */
+/* Dark Mode Variables */
 .dark-theme {
-    --primary-color: rgb(0, 0, 0); /* Dark mode body background color */
-    --secondary-color: white; /* Dark mode text color */
-    --item-bg: rgb(22, 22, 22); /* Slightly black container background */
-    --box-bg: rgb(0, 0, 0); /* Box background in dark mode */
-    --btn: #333333; /* Button hover background in dark mode */
+    --primary-color: black;
+    --secondary-color: white;
+    --item-bg: rgb(22, 22, 22);
+    --box-bg: black;
+    --btn: #333333;
 }
 
+/* Default Body Style */
 body {
-    margin: 0; /* Remove default margin */
-    padding: 25px 15%; /* Add padding around the body for spacing */
-    width: 100%; /* Set body width to 100% */
-    background-color: var(--primary-color); /* Background color from root variable */
-    color: var(--secondary-color); /* Text color from root variable */
+    margin: 0;
+    padding: 25px 15%; /* Default padding for desktop */
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
-/* Container for the full layout */
+/* Main Container */
 .container {
-    width: 100%; /* Full width for the container */
-    max-width: 1200px; /* Maximum width for larger screens */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 0 5%; /* Add horizontal padding */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
     opacity: 0;
     transform: translateY(15px);
     animation: fadeIn 0.6s ease-in-out forwards;
@@ -448,7 +449,12 @@ body {
 
     /* Remove body padding on smaller screens (tablet and phone sizes) */
     body {
-        padding: 20px 0; /* Remove padding for smaller screens */
+        padding: 20px 8%; /* Reduce padding for better fit */
+    }
+
+    .container {
+        max-width: 1000px; /* Adjust container width */
+        padding: 0 4%; /* Reduce container padding */
     }
 }
 
@@ -456,7 +462,12 @@ body {
 
     /* Remove body padding on smaller screens (tablet and phone sizes) */
     body {
-        padding: 20px 0; /* Remove padding for smaller screens */
+        padding: 15px 5%; /* Reduce padding for smaller screens */
+    }
+
+    .container {
+        max-width: 100%; /* Use full width on smaller screens */
+        padding: 0; /* Further reduce padding */
     }
 
     /* Header adjustments for smaller screens */
