@@ -41,7 +41,7 @@ body {
 /* Main Container */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 5%;
     opacity: 0;
@@ -437,51 +437,114 @@ body {
 
 /* Responsive design for smaller screens (phone and tablet) */
 
-@media (max-width: 1150px) {
-
-    /* Remove body padding on smaller screens (tablet and phone sizes) */
-    body {
-        padding: 20px 8%; /* Remove padding for smaller screens */
-    }
-}
-
 @media (max-width: 1024px) {
-
-    /* Remove body padding on smaller screens (tablet and phone sizes) */
     body {
-        padding: 20px 0; /* Reduce padding for better fit */
+        padding: 20px 8%;
     }
 
     .container {
-        max-width: 1000px; /* Adjust container width */
-        padding: 0 4%; /* Reduce container padding */
+        max-width: 900px;
+        padding: 0 4%;
+    }
+
+    /* Header Adjustments */
+    .header {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .header img {
+        height: 130px; /* Slightly smaller image */
+    }
+
+    .header-content h2 {
+        font-size: 18px;
+    }
+
+    .header-content p {
+        font-size: 13px;
+    }
+
+    .header #icon {
+        height: 22px;
+        top: 5px;
+    }
+
+    /* Button Adjustments */
+    .btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    /* Content Container */
+    .content-container {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    /* Adjust Items */
+    .item {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .item:first-child {
+        flex: 1 1 100%; /* First item takes full width */
+    }
+
+    .item:nth-child(2) {
+        flex: 1 1 45%; /* Make tech-stack section fit better */
+    }
+
+    .item:nth-child(2) .tech-stack div {
+        width: 18%;
+    }
+
+    .item:nth-child(3),
+    .item:nth-child(4),
+    .item:nth-child(5),
+    .item:nth-child(6) {
+        flex: 1 1 45%;
     }
 }
 
+/* Small Tablet & Large Phone Adjustments (600px - 800px) */
 @media (max-width: 800px) {
-
-    /* Remove body padding on smaller screens (tablet and phone sizes) */
     body {
-        padding: 15px 5%; /* Reduce padding for smaller screens */
+        padding: 15px 5%;
     }
 
     .container {
-        max-width: 100%; /* Use full width on smaller screens */
-        padding: 0; /* Further reduce padding */
+        max-width: 100%;
+        padding: 0;
     }
 
-    /* Header adjustments for smaller screens */
-    .header {
+    .header img {
         flex-direction: row; /* Adjust to horizontal layout */
         align-items: start; /* Align items to the top */
         text-align: left; /* Align text to the left */
         gap: 10px; /* Adjust space between image and content */
-        margin-bottom: 20px;
+        height: 120px; /* Reduce image size */
     }
 
     .header-content h2 {
         font-size: 16px; /* Reduce font size for smaller screens */
         margin: 0; /* Adjust margin above */
+    }
+
+    .content-container {
+        gap: 10px;
+        padding: 0; /* Remove padding to take up full width */
+        width: 100%; /* Ensure content takes full width */
+    }
+
+    .item {
+        flex: 1 1 100%; /* Single column layout on smaller tablets */
     }
 
     .header-content p {
@@ -498,10 +561,6 @@ body {
         top: 5px;
     }
 
-    .header img {
-        height: 120px; /* Reduce image size */
-    }
-
     .btn {
         padding: 4px 10px; /* Adjust padding inside the button */
         border-radius: 5px;
@@ -513,11 +572,6 @@ body {
     }
 
     /* Content Section adjustments */
-    .content-container {
-        padding: 0; /* Remove padding to take up full width */
-        width: 100%; /* Ensure content takes full width */
-    }
-
     .item {
         flex: 1 1 100%; /* Each item takes up full width on smaller screens */
     }
@@ -533,31 +587,8 @@ body {
     .item:nth-child(2) .tech-stack div {
         width: 15%; /* Set width for each tech stack item */
     }
-}
 
-@media (max-width: 600px) {
-    body {
-        padding: 15px 4%;
+    .item:nth-child(3), .item:nth-child(4) {
+        flex: 1 1 100%; /* Third item takes full width */
     }
-
-    .container {
-        max-width: 100%;
-    }
-
-    .header {
-        flex-direction: row;
-    }
-
-    .header img {
-        height: 110px;
-    }
-
-    .item {
-        flex: 1 1 100%;
-    }
-}
-
-/* Prevent Mobile Scaling */
-meta[name="viewport"] {
-    content: "width=1200, initial-scale=1.0";
 }
