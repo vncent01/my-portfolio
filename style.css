@@ -436,91 +436,95 @@ body {
 
 /* Responsive design for smaller screens (phone and tablet) */
 
+/* General styles for responsive design */
 @media (max-width: 1150px) {
-
-    /* Remove body padding on smaller screens (tablet and phone sizes) */
     body {
-        padding: 20px 8%; /* Remove padding for smaller screens */
+        padding: 20px 8%;
     }
 }
 
 @media (max-width: 1024px) {
-
-    /* Remove body padding on smaller screens (tablet and phone sizes) */
     body {
-        padding: 20px 0; /* Remove padding for smaller screens */
+        padding: 20px 0;
     }
 }
 
-@media (max-width: 800px) {
-
-    /* Remove body padding on smaller screens (tablet and phone sizes) */
-    body {
-        padding: 20px 0; /* Remove padding for smaller screens */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 5%;
     }
 
-    /* Header adjustments for smaller screens */
+    /* Header adjustments */
     .header {
-        flex-direction: row; /* Adjust to horizontal layout */
-        align-items: start; /* Align items to the top */
-        text-align: left; /* Align text to the left */
-        gap: 10px; /* Adjust space between image and content */
+        flex-direction: row;
+        align-items: start;
+        text-align: left;
+        gap: 10px;
         margin-bottom: 20px;
     }
 
     .header-content h2 {
-        font-size: 16px; /* Reduce font size for smaller screens */
-        margin: 0; /* Adjust margin above */
+        font-size: 16px;
+        margin: 0;
     }
 
     .header-content p {
-        font-size: 12px; /* Reduce font size for paragraphs */
-        margin-bottom: 0; /* Remove margin below */
+        font-size: 12px;
+        margin-bottom: 0;
     }
 
     .header #icon {
         position: absolute;
-        height: 20px; /* Reduce icon size */
-        margin-left: 0; /* Remove left margin */
-        margin-bottom: 0; /* Reset bottom margin */
-        transform: translateY(0); /* Reset position */
+        height: 20px;
         top: 5px;
+        margin: 0;
+        transform: translateY(0);
     }
 
     .header img {
-        height: 120px; /* Reduce image size */
+        height: 120px;
     }
 
+    /* Button styles */
     .btn {
-        padding: 4px 10px; /* Adjust padding inside the button */
+        padding: 4px 10px;
         border-radius: 5px;
-        margin: 5px 0 0 0; /* Adjust margin above */
-        display: block; /* Ensure buttons stay inline */
-        cursor: pointer; /* Show pointer on hover */
-        transition: 0.2s; /* Smooth hover effect */
-        font-size: 11px; /* Reduce font size */
+        margin-top: 5px;
+        display: block;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 11px;
     }
 
     /* Content Section adjustments */
     .content-container {
-        padding: 0; /* Remove padding to take up full width */
-        width: 100%; /* Ensure content takes full width */
+        padding: 0;
+        width: 100%;
     }
 
     .item {
-        flex: 1 1 100%; /* Each item takes up full width on smaller screens */
+        flex: 1 1 100%;
     }
 
     .item:first-child p {
         font-size: 12px;
     }
-    
-    .item:nth-child(2) {
-        flex: 1 1 100%; /* Second item takes full width */
-    }
 
-    .item:nth-child(2) .tech-stack div {
-        width: 15%; /* Set width for each tech stack item */
+    .item:nth-child(2) {
+        flex: 1 1 100%;
     }
 }
+
+/* Additional styles for smaller screens */
+@media (max-width: 800px) {
+    body {
+        padding: 20px 0;
+    }
+
+    /* Tech stack adjustments */
+    .item:nth-child(2) .tech-stack div {
+        width: 15%;
+    }
+}
+
 
