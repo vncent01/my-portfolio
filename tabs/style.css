@@ -379,8 +379,6 @@ body {
     white-space: nowrap; /* Prevents text from breaking */
 }
 
-
-
 @media (max-width: 1150px) {
 
     /* Remove body padding on smaller screens (tablet and phone sizes) */

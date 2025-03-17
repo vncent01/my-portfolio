@@ -439,7 +439,7 @@ body {
 
 @media (max-width: 1024px) {
     body {
-        padding: 20px 8%;
+        padding: 20px 0;
     }
 
     .container {
@@ -488,28 +488,28 @@ body {
         gap: 15px;
     }
 
-    /* Adjust Items */
-    .item {
-        flex: 1 1 calc(50% - 20px);
-    }
-
     .item:first-child {
-        flex: 1 1 100%; /* First item takes full width */
+        flex: 1 1 50%; /* First item takes full width */
     }
 
-    .item:nth-child(2) {
-        flex: 1 1 45%; /* Make tech-stack section fit better */
+    .item:first-child p {
+        font-size: 12px;
     }
 
-    .item:nth-child(2) .tech-stack div {
-        width: 18%;
+    .item:nth-child(3) h4 {
+        font-size: 13px;
     }
 
-    .item:nth-child(3),
-    .item:nth-child(4),
-    .item:nth-child(5),
-    .item:nth-child(6) {
-        flex: 1 1 45%;
+    .item:nth-child(3) .date, p {
+        font-size: 12px;
+    }
+
+    .item:nth-child(6) .contact-content h3 {
+        font-size: 13px;
+    }
+
+    .item:nth-child(6) .contact-content p {
+        font-size: 12px;
     }
 }
 
