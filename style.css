@@ -524,31 +524,3 @@ body {
     }
 }
 
-/* Force Desktop Mode Even on Phones */
-@media (max-width: 600px) {
-    body {
-        padding: 20px 0;
-    }
-
-    .content-container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .header {
-        flex-direction: row;
-    }
-
-    .header img {
-        height: 120px;
-    }
-
-    .item {
-        flex: 1 1 50%;
-    }
-}
-
-/* Prevent Mobile Scaling */
-meta[name="viewport"] {
-    content: "width=1200, initial-scale=1.0";
-}
