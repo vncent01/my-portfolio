@@ -396,7 +396,7 @@ body {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
     /* Remove body padding on smaller screens (tablet and phone sizes) */
     body {
@@ -406,6 +406,11 @@ body {
     .exp-container {
         flex: 1 1 100%; /* Full width (one column) */
     }
+
+    .exp-container ul {
+        font-size: 13px; /* Set font size for paragraphs */
+        margin-left: 17px;
+    }    
 
     .modal-content {
         width: 85%;
