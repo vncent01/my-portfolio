@@ -149,8 +149,9 @@ body {
     border-radius: 5px;
 }
 
-.exp-container p {
+.exp-container ul {
     font-size: 13px; /* Set font size for paragraphs */
+    margin-left: 17px;
 }
 
 .certificate-container {
