@@ -1,18 +1,18 @@
-var icon = document.getElementById("icon");
+const icon = document.getElementById("icon");
 
-function applyDarkMode() {
+const applyDarkMode = () => {
     if (localStorage.getItem("dark-theme") === "enabled") {
         document.body.classList.add("dark-theme");
         if (icon) icon.src = "images/moon.png";
     }
-}
+};
 
 // Apply dark mode on page load
 applyDarkMode();
 
 // Toggle dark mode on click
 if (icon) {
-    icon.onclick = function () {
+    icon.addEventListener("click", () => {
         document.body.classList.toggle("dark-theme");
 
         if (document.body.classList.contains("dark-theme")) {
@@ -22,48 +22,43 @@ if (icon) {
             icon.src = "images/sun.png";
             localStorage.removeItem("dark-theme");
         }
-    };
+    });
 }
 
-document.getElementById("scheduleGoogleCalendar").addEventListener("click", function() {
+const scheduleButton = document.getElementById("scheduleGoogleCalendar");
+if (scheduleButton) {
+    scheduleButton.addEventListener("click", () => {
+        const now = new Date();
+        const startTime = now.toISOString().replace(/[-:.]/g, "").slice(0, 15) + "Z";
+        const endTime = new Date(now.getTime() + 60 * 60 * 1000).toISOString().replace(/[-:.]/g, "").slice(0, 15) + "Z";
+        const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=Meeting&dates=${startTime}/${endTime}&ctz=UTC`;
 
-    let now = new Date();
-    
-    let startTime = now.toISOString().replace(/[-:.]/g, "").slice(0, 15) + "Z";
-    
-    let endTime = new Date(now.getTime() + 60 * 60 * 1000).toISOString().replace(/[-:.]/g, "").slice(0, 15) + "Z";
-
-    let googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=Meeting&dates=${startTime}/${endTime}&ctz=UTC`;
-
-    window.open(googleCalendarURL, "_blank");
-});
-
-document.getElementById("sendEmail").addEventListener("click", function() {
-    let gmailURL = "https://mail.google.com/mail/?view=cm&fs=1&to=vincentsarcilla01@gmail.com";
-    window.open(gmailURL, "_blank");
-});
-
-function openModal(modalId) {
-    let modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.add("show");
-    }
+        window.open(googleCalendarURL, "_blank");
+    });
 }
 
-function closeModal(modalId) {
-    let modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.remove("show");
-    }
+const emailButton = document.getElementById("sendEmail");
+if (emailButton) {
+    emailButton.addEventListener("click", () => {
+        const gmailURL = "https://mail.google.com/mail/?view=cm&fs=1&to=vincentsarcilla01@gmail.com";
+        window.open(gmailURL, "_blank");
+    });
 }
 
-window.onclick = function(event) {
-    let modals = document.querySelectorAll(".modal");
-    modals.forEach(modal => {
+const openModal = (modalId) => {
+    const modal = document.getElementById(modalId);
+    if (modal) modal.classList.add("show");
+};
+
+const closeModal = (modalId) => {
+    const modal = document.getElementById(modalId);
+    if (modal) modal.classList.remove("show");
+};
+
+window.addEventListener("click", (event) => {
+    document.querySelectorAll(".modal").forEach(modal => {
         if (event.target === modal) {
             modal.classList.remove("show");
         }
     });
-}
-
-
+});
