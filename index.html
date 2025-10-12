@@ -1,182 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincent Sarcilla</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/logo.png">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vincent Sarcilla | Portfolio</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <!-- Mobile Header removed, content is now pushed down by the main content wrapper -->
+        <header class="mobile-header" id="mobile-header"></header>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
 
-    <div class="container">
+        <div class="container" id="portfolio-container">
 
-        <!-- Header Section -->
-        <section class="header">
-            <div class="header-img">
-                <img src="images/photo-dark.jpg" alt="Vincent Sarcilla">
-            </div>
-
-            <div class="header-content">
-                <h2>Vincent Sarcilla</h2>
-                <p><i class='bx bx-map'></i> Bulacan, Philippines</p>
-                <p>Front-End Development</p>
-
-                <button class="btn btn-1" id="scheduleGoogleCalendar">
-                    <i class='bx bxs-calendar'></i> Schedule a Call
-                </button>
-                <button class="btn btn-2" id="sendEmail">
-                    <i class='bx bx-envelope'></i> Send Email
-                </button>
-            
-                <img src="images/sun.png" id="icon">
-            </div>
-
-            
-        </section>
-
-        <!-- Content Section -->
-        <section class="content-container">
-
-            <div class="item">
-                <div class="title-container">
-                    <h1><i class='bx bx-briefcase'></i>About</h1>
-                </div>
-                <p>I am a recent graduate with a Bachelor's degree in Information Systems, equipped with a strong foundation in front-end development, database management, and project leadership. Key projects like the Head Dean System and Cibus Delivery Services honed my skills in team management, problem-solving, and technical execution. Passionate about collaboration and continuous learning, I thrive on solving complex challenges and exploring new technologies to grow in the dynamic tech industry.</p>
-            </div>
-
-            <div class="item">
-                <div class="title-container">
-                    <h1><i class='bx bx-data'></i>Tech Stack</h1>
-                    <a href="tabs/skills.html" class="view-more">Show All ></a>
-                </div>
-                    <div class="tech-stack">
-                        <div class="skills">
-                            <img src="images/javascript.png" alt="Front-End Stack">
-                            <p>JavaScript</p>
-                        </div>
-                        <div class="skills">
-                            <img src="images/html.png" alt="Front-End Stack">
-                            <p>HTML</p>
-                        </div>
-                        <div class="skills">
-                            <img src="images/css.png" alt="Front-End Stack">
-                            <p>CSS</p>
-                        </div>
-                        <div class="skills">
-                            <img src="images/react.png" alt="Front-End Stack">
-                            <p>React JS</p>
-                        </div>
-                        <div class="skills">
-                            <img src="images/bootstrap.png" alt="Front-End Stack">
-                            <p>Bootstrap</p>
-                        </div>
-                        <div class="skills">
-                            <img src="images/mysql-logo-1.png" alt="Front-End Stack" id="mysql">
-                            <p>MySql</p>
-                        </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="title-container">
-                    <h1><i class='bx bx-globe'></i>Experience</h1>
-                    <a href="tabs/experience.html" class="view-more">Show All ></a>
-                </div>
-                
-                <h4>Internship: Server Management & Website Maintenance</h4>
-                <p class="p-text">Bestlink College of the Philippines - MIS Dept.</p>
-                <span class="date">April 2024 - July 2024</span>
-
-                <h4 id="h4">Freelance: English Transcriber & Quality Assurance</h4>
-                <p class="p-text">Transcriber Guru, Indonesia</p>
-                <span class="date">November 2023 - January 2024</span>
-            </div>
-
-            <div class="item">
-                <div class="title-container">
-                    <h1><i class='bx bx-laptop'></i>Certifications</h1>
-                    <a href="tabs/certificate.html" class="view-more">Show All ></a>
-                </div>
-            
-                <div class="certificate-container">
-                    <div class="certificate" onclick="window.open('https://www.sololearn.com/certificates/CC-YWBAI0IT', '_blank');">
-                        <h4>Web Development</h4>
-                        <p>Sololearn</p>
+            <nav class="sidebar">
+                <div class="sidebar-header">                
+                    <img src="images/photo-dark.jpg" alt="Vincent Sarcilla" class="profile-pic">
+                    <h2>Vincent Sarcilla</h2>
+                    <p class="position">Front-End Developer</p>
+                    <p class="address"><i class='bx bx-map'></i>San Jose Del Monte City</p>
+                    <div class="header-buttons">
+                        <button class="btn"><a id="download-cv">Download CV</a></button>
+                        <button class="btn" id="toggle-theme">Toggle Theme</button>
                     </div>
-                    <div class="certificate" onclick="window.open('https://learn.opswatacademy.com/certificate/7nDMmcXNlw', '_blank');">
-                        <h4>Introduction to Critical Infrastructure Protection</h4>
-                        <p>Opswat Academy</p>
-                    </div>
-                    <div class="certificate" onclick="window.open('https://drive.google.com/file/d/1oAn90LMIajYgqCrB9FcO2bZk_KnLKFsM/view?usp=drive_link', '_blank');">
-                        <h4>Software Engineering Masterclass: Navigating the Career Path in 2025</h4>
-                        <p>Xaltius Academy</p>
-                    </div>
-                    <div class="certificate" onclick="window.open('https://drive.google.com/file/d/1RVAuFqcHQwjVUO7desT2BZI8ZGmdsUN7/view?usp=drive_link', '_blank');">
-                        <h4>Data Visualization Workshop</h4>
-                        <p>ZUITT</p>
-                    </div>
-                    <div class="certificate" onclick="window.open('https://www.sololearn.com/certificates/CC-YYWU5BDT');">
-                        <h4>Introduction to JavaScript</h4>
-                        <p>Sololearn</p>
-                    </div>
-                    <div class="certificate" onclick="window.open('https://drive.google.com/file/d/1D1JiaECJVjjF5P5Z-5DgKKBkHw2Mtj5k/view?usp=drive_link', '_blank');">
-                        <h4>Planning and Designing Custom Software with AI</h4>
-                        <p>Phoenix One</p>
+                    <hr>
+                </div>
+                    
+                <div class="sidebar-nav">
+                    <ul class="nav-links">
+                        <li><a href="#about"><i class='bx bx-user'></i>About</a></li>
+                        <li><a href="tabs/skills.html"><i class='bx bx-data'></i>Tech Stack</a></li>
+                        <li><a href="tabs/experience.html"><i class='bx bx-globe'></i>Experience</a></li>
+                        <li><a href="tabs/certificate.html"><i class='bx bx-award'></i>Certifications</a></li>
+                        <li><a href="tabs/projects.html"><i class='bx bx-laptop'></i>Projects</a></li>
+                        <li><a href="#connect"><i class='bx bx-envelope'></i>Connect</a></li>
+                    </ul>
+
+                    <div style="display: none;">
+                        <section id="tech-stack"></section>
+                        <section id="experience"></section>
+                        <section id="certifications"></section>
+                        <section id="projects"></section>
+                        <section id="connect"></section>
                     </div>
                 </div>
-            </div>            
-            
-            <div class="item">
-                <div class="title-container">
-                    <h1><i class='bx bx-laptop'></i>Projects</h1>
-                    <a href="tabs/projects.html" class="view-more">Show All ></a>
-                </div>
-                <div class="project">
-                    <a href="#">School Management System - Head Dean System</a>
-                </div>
-                <div class="project">
-                    <a href="#">Cibus Delivery Services</a>
-                </div>
-                <div class="project">
-                    <a href="#">Coffee Shop Menu</a>
-                </div>
-            </div>
 
-            <div class="item">
-                <div class="title-container">
-                    <h1><i class='bx bx-envelope'></i>Connect</h1>
-                </div>
-                <div class="contact-content">
-                    <h3>Get in touch!</h3>
-                    <p><b>Email:</b> vincentsarcilla01@gmail.com</p>
-                    <p>Feel free to send me an <a href="mailto:vincentsarcilla01@gmail.com">email.</a></p>
-                </div>
-    
-                <div class="social">
-                    <a href="https://www.linkedin.com/in/vincent-sarcilla-013537348/" target="_blank">
-                        <i class='bx bxl-linkedin'></i>
-                    </a>
-                    <a href="https://github.com/vncent01" target="_blank">
-                        <i class='bx bxl-github'></i>
-                    </a>
-                    <a href="https://www.facebook.com/vincent.sarcilla.5" target="_blank">
-                        <i class='bx bxl-facebook'></i>
-                    </a>
-                    <a href="https://www.instagram.com/vncent.01/" target="_blank">
-                        <i class='bx bxl-instagram'></i>
-                    </a>
-                </div>
+                <footer class="sidebar-footer">
+                    <p>&copy; 2025 Vincent Sarcilla. All Rights Reserved.</p>
+                </footer>
+            </nav>
 
-            </div>
-        </section>
+            <main class="main-content-wrapper">
 
-        <footer class="footer">
-            <p>&copy; 2025 Vincent Sarcilla. All Rights Reserved.</p>
-        </footer>
-    </div>
+                <section id="about" class="intro-hero">
+                    <!-- Subtle background effect removed as requested -->
+                    <div class="intro-content">
+                        <p class="hero-name fade-in-delay-2">👋 Hello, I’m Vincent</p>
+                        <p class="hero-tagline fade-in-delay-3">Associate Software Engineer | Information Systems Graduate</p>
+                        <p class="typing-text-container fade-in-delay-4">
+                            <span id="typing-role"></span><span class="cursor">|</span>
+                        </p>
+                        <p class="hero-description fade-in-delay-5">
+                            Passionate about crafting intuitive and engaging web experiences. 
+                            I bring a solid foundation in front-end development, database management, 
+                            and problem-solving to every project. Eager to innovate and grow in the tech industry.
+                        </p>
+                        <p class="motto fade-in-delay-6">"Driven by curiosity, guided by precision."</p>
 
-    <script src="script.js"></script>
-</body>
+                        <div class="stats-grid fade-in-delay-7">
+                            <div class="stat-item">
+                                <i class='bx bx-bar-chart-alt-2'></i>
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class='bx bx-briefcase'></i>
+                                <span class="stat-number">9 Months</span>
+                                <span class="stat-label">Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class='bx bx-brain'></i>
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Skills Mastered</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-highlight fade-in-delay-8">
+                            <span class="skill-badge">💻 HTML</span>
+                            <span class="skill-badge">🎨 CSS</span>
+                            <span class="skill-badge">⚙️ JavaScript</span>
+                            <span class="skill-badge">⚛️ React</span>
+                            <span class="skill-badge">💾 MySQL</span>
+                            <span class="skill-badge">📊 SAP FICO</span>
+                        </div>
+
+                        <div class="main-content-buttons fade-in-delay-9">
+                            <button class="btn cta-btn view-projects"><a href="tabs/projects.html">View Projects</a></button>
+                            <button class="btn cta-btn contact-me"><a href="mailto:vincentsarcilla01@gmail.com">Contact Me</a></button>
+                        </div>
+                    
+                        <div class="project-preview fade-in-delay-10">
+                            <h3>Quick Preview</h3>
+                            <div class="preview-scroll-container">
+                                <div class="preview-item">
+                                    <i class='bx bx-desktop'></i>
+                                    <p>Head Dean System</p>
+                                    <span class="project-tag">Web App</span>
+                                </div>
+                                <div class="preview-item">
+                                    <i class='bx bx-restaurant'></i>
+                                    <p>Cibus Delivery</p>
+                                    <span class="project-tag">E-Commerce</span>
+                                </div>
+                                <div class="preview-item">
+                                    <i class='bx bx-globe'></i>
+                                    <p>Personal Portfolio</p>
+                                    <span class="project-tag">Design</span>
+                                </div>
+                            </div>
+                            <a href="#projects" class="more-projects-link">View More Projects →</a>
+                        </div>
+
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
 </html>
