@@ -26,16 +26,26 @@ toggleBtn?.addEventListener("click", () => {
 });
 
 const mobileToggle = document.getElementById("mobile-toggle");
-const sidebar = document.getElementById("sidebar");
+const sidebar = document.querySelector(".sidebar");
 
-mobileToggle.addEventListener("click", () => {
+mobileToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
   sidebar.classList.toggle("active");
   document.body.classList.toggle("sidebar-open");
-
-  const icon = mobileToggle.querySelector("i");
-  icon.classList.toggle("fa-bars");
-  icon.classList.toggle("fa-xmark");
 });
+
+// Close sidebar when clicking outside
+document.addEventListener("click", (e) => {
+  if (
+    document.body.classList.contains("sidebar-open") &&
+    !sidebar.contains(e.target) &&
+    !mobileToggle.contains(e.target)
+  ) {
+    sidebar.classList.remove("active");
+    document.body.classList.remove("sidebar-open");
+  }
+});
+
 
 // Function to Open Modal
 function openModal(modalId) {
