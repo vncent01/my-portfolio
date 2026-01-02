@@ -463,9 +463,63 @@ body {
   line-height: 1.4;
 }
 
-/* Responsive behavior for smaller screens */
-@media (max-width: 800px) {
-  .content-row {
-    flex-direction: column;
+/* --- Mobile Toggle Button --- */
+.mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  background: var(--item-bg);
+  color: var(--secondary-color);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Responsive Sidebar --- */
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: var(--item-bg);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* Show hamburger icon on mobile */
+  .mobile-toggle {
+    display: block;
+  }
+
+  /* Adjust main content */
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 60px; /* space for toggle */
+  }
+
+  /* Optional: Dim background when sidebar is open */
+  body.sidebar-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
   }
 }

@@ -24,3 +24,41 @@ toggleBtn?.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
   }
 });
+
+const mobileToggle = document.getElementById("mobile-toggle");
+const sidebar = document.getElementById("sidebar");
+
+mobileToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+  document.body.classList.toggle("sidebar-open");
+
+  const icon = mobileToggle.querySelector("i");
+  icon.classList.toggle("fa-bars");
+  icon.classList.toggle("fa-xmark");
+});
+
+// Function to Open Modal
+function openModal(modalId) {
+    let modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add("show"); // Show modal
+    }
+}
+
+// Function to Close Modal
+function closeModal(modalId) {
+    let modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove("show"); // Hide modal
+    }
+}
+
+// Close modal when clicking outside the modal-content
+window.onclick = function(event) {
+    let modals = document.querySelectorAll(".modal");
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.classList.remove("show");
+        }
+    });
+}
