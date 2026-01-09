@@ -495,7 +495,7 @@ body {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
   body {
     display: block;
@@ -511,6 +511,17 @@ body {
     transform: translateX(-100%);
     z-index: 1000;
   }
+
+  .sidebar-footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px 5px;
+  border-top: 1px solid var(--border);
+}
 
   /* Show sidebar on click */
   .sidebar.active {
